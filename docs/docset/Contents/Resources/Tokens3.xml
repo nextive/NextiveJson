@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/NXJsonSerializer.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/NXJsonSerializer</TokenIdentifier>
+			<Abstract>Serializes an object structure to Json, according to the spec in http://www.json.org/</Abstract>
+			<DeclaredIn>NXJsonSerializer.h</DeclaredIn>
+			
+			<NodeRef refid="3"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NXJsonSerializer/serialize:</TokenIdentifier>
+			<Abstract>Serializes the specified object, such as NSDictionary, NSNumber, NSString, NSArray, NSNull</Abstract>
+			<DeclaredIn>NXJsonSerializer.h</DeclaredIn>			
+			
+			<Declaration>+ (NSString *)serialize:(id)object</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>object</Name>
+					<Abstract>the object to serialize</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Returns a serialized object</Abstract></ReturnValue>
+			<Anchor>//api/name/serialize:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXJsonSerializer/serialize:</TokenIdentifier>
+			<Abstract>Serializes the specified object, such as NSDictionary, NSNumber, NSString, NSArray, NSNull</Abstract>
+			<DeclaredIn>NXJsonSerializer.h</DeclaredIn>			
+			
+			<Declaration>- (NSString *)serialize:(id)object</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>object</Name>
+					<Abstract>the object to serialize</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Returns a serialized object</Abstract></ReturnValue>
+			<Anchor>//api/name/serialize:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NXJsonSerializer/serialize:toFile:error:</TokenIdentifier>
+			<Abstract>Serializes the object and writes serialized object's contents to a specific file.</Abstract>
+			<DeclaredIn>NXJsonSerializer.h</DeclaredIn>			
+			
+			<Declaration>+ (BOOL)serialize:(id)object toFile:(NSString *)path error:(NSError **)error</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>object</Name>
+					<Abstract>The object to serialize</Abstract>
+				</Parameter><Parameter>
+					<Name>path</Name>
+					<Abstract>The destination path of the serialized data's newly created file</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Returns YES on success, NO on error.</Abstract></ReturnValue>
+			<Anchor>//api/name/serialize:toFile:error:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

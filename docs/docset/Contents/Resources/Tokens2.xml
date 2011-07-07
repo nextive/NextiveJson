@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Classes/NXJsonParser.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cl/NXJsonParser</TokenIdentifier>
+			<Abstract>Implements a fast JSON parser according to the spec in http://www.json.org/
+Also has support for C style comments.</Abstract>
+			<DeclaredIn>NXJsonParser.h</DeclaredIn>
+			
+			<NodeRef refid="2"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NXJsonParser/parseString:error:ignoreNulls:</TokenIdentifier>
+			<Abstract>Encodes the jsonString to data and calls [NXJsonParser parseData:error:ignoreNulls:]</Abstract>
+			<DeclaredIn>NXJsonParser.h</DeclaredIn>			
+			
+			<Declaration>+ (id)parseString:(NSString *)jsonString error:(NSError **)error ignoreNulls:(BOOL)ignoreNulls</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>jsonString</Name>
+					<Abstract>The string to parse</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract>The parsing error</Abstract>
+				</Parameter><Parameter>
+					<Name>ignoreNulls</Name>
+					<Abstract>If YES null values will be ignored in the parsing process</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Returns the parsed data</Abstract></ReturnValue>
+			<Anchor>//api/name/parseString:error:ignoreNulls:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NXJsonParser/parseData:error:ignoreNulls:</TokenIdentifier>
+			<Abstract>Parse the provided data.</Abstract>
+			<DeclaredIn>NXJsonParser.h</DeclaredIn>			
+			
+			<Declaration>+ (id)parseData:(NSData *)jsonData error:(NSError **)error ignoreNulls:(BOOL)ignoreNulls</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>jsonData</Name>
+					<Abstract>The data to parse</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract>The parsing error</Abstract>
+				</Parameter><Parameter>
+					<Name>ignoreNulls</Name>
+					<Abstract>If YES null values will be ignored in the parsing process</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Returns the parsed data</Abstract></ReturnValue>
+			<Anchor>//api/name/parseData:error:ignoreNulls:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/clm/NXJsonParser/parseFileAtPath:error:ignoreNulls:</TokenIdentifier>
+			<Abstract>Used to parse a specific file. Calls [NXJsonParser parseData:error:ignoreNulls:] with the given path for the file</Abstract>
+			<DeclaredIn>NXJsonParser.h</DeclaredIn>			
+			
+			<Declaration>+ (id)parseFileAtPath:(NSString *)path error:(NSError **)error ignoreNulls:(BOOL)ignoreNulls</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>path</Name>
+					<Abstract>The file's path to parse</Abstract>
+				</Parameter><Parameter>
+					<Name>error</Name>
+					<Abstract>The parsing error</Abstract>
+				</Parameter><Parameter>
+					<Name>ignoreNulls</Name>
+					<Abstract>If YES null values will be ignored in the parsing process</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Returns the parsed file</Abstract></ReturnValue>
+			<Anchor>//api/name/parseFileAtPath:error:ignoreNulls:</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXJsonParser/initWithData:NOTNULL:(:1:):</TokenIdentifier>
+			<Abstract>Initializes a new data object</Abstract>
+			<DeclaredIn>NXJsonParser.h</DeclaredIn>			
+			
+			<Declaration>- (id)initWithData:(NSData *)data NOTNULL ( 1 )</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>data</Name>
+					<Abstract>The data to parse</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Returns the initialized data object</Abstract></ReturnValue>
+			<Anchor>//api/name/initWithData:NOTNULL:(:1:):</Anchor>
+		</Token>
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/instm/NXJsonParser/parse:ignoreNulls:</TokenIdentifier>
+			<Abstract>Parsing of passed data occurs here</Abstract>
+			<DeclaredIn>NXJsonParser.h</DeclaredIn>			
+			
+			<Declaration>- (id)parse:(NSError **)error ignoreNulls:(BOOL)ignoreNulls</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>error</Name>
+					<Abstract>The parsing error</Abstract>
+				</Parameter><Parameter>
+					<Name>ignoreNulls</Name>
+					<Abstract>If YES null values will be ignored in the parsing process</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Returns the parsed data</Abstract></ReturnValue>
+			<Anchor>//api/name/parse:ignoreNulls:</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

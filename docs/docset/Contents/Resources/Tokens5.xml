@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Protocols/NXSerializable.html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intf/NXSerializable</TokenIdentifier>
+			<Abstract>Implement this protocol to allow for seamless serialization of objects to the supported formats (JSON, binary, etc.)</Abstract>
+			<DeclaredIn>NXSerializable.h</DeclaredIn>
+			
+			<NodeRef refid="5"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NXSerializable/serialize</TokenIdentifier>
+			<Abstract>Return any valid object for serialization except an object that conforms to this protocol.
+If you want a nil, return [NSNull null]</Abstract>
+			<DeclaredIn>NXSerializable.h</DeclaredIn>			
+			
+			<Declaration>- (id)serialize</Declaration>
+			
+			
+			<Anchor>//api/name/serialize</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

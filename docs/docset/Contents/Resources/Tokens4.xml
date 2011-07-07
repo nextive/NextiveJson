@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Tokens version="1.0">
+	<File path="Categories/NSError(Extensions).html">
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/cat/NSError</TokenIdentifier>
+			<Abstract>Extensions to simplfy common tasks with NSError</Abstract>
+			<DeclaredIn>NSError+Extensions.h</DeclaredIn>
+			
+			<NodeRef refid="4"/>
+		</Token>
+		
+		
+		<Token>
+			<TokenIdentifier>//apple_ref/occ/intfm/NSError/errorWithDomain:code:description:NOTNULL:(:1:,:3:):</TokenIdentifier>
+			<Abstract>Does all the dirty work of creating a simple NSError object.</Abstract>
+			<DeclaredIn>NSError+Extensions.h</DeclaredIn>			
+			
+			<Declaration>+ (NSError *)errorWithDomain:(NSString *)domain code:(NSInteger)code description:(NSString *)description NOTNULL ( 1 , 3 )</Declaration>
+			<Parameters>
+				<Parameter>
+					<Name>domain</Name>
+					<Abstract>The error domain - this can be one of the predefined NSError domains.</Abstract>
+				</Parameter><Parameter>
+					<Name>code</Name>
+					<Abstract>The error code for the error</Abstract>
+				</Parameter><Parameter>
+					<Name>description</Name>
+					<Abstract>A NSString containing the description of the error</Abstract>
+				</Parameter>
+			</Parameters>
+			<ReturnValue><Abstract>Returns an NSError object for domain with the specified error code and description</Abstract></ReturnValue>
+			<Anchor>//api/name/errorWithDomain:code:description:NOTNULL:(:1:,:3:):</Anchor>
+		</Token>
+		
+	</File>
+</Tokens>

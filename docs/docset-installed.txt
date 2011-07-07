@@ -1,0 +1,4 @@
+Documentation set was installed to Xcode!
+
+Path: /Users/ma/Library/Developer/Shared/Documentation/DocSets/Nextive.Nextive-Json.docset
+Time: 2011-07-07 14:06:37 -0300
