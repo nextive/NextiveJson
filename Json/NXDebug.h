@@ -49,14 +49,14 @@
 
 // Prints a message and the call stack to the console, and calls NXDebugBreak
 // INTERNAL. Do not use directly.
-void _NXAssert(NSString *message, const char *filename, int lineNumber, const char *functionName) NOTNULL(1, 2, 3) NORETURN;
+void _NXAssert(NSString *message, const char *filename, int lineNumber, const char *functionName) NOTNULL(1, 2, 4) NORETURN;
 
 // Prints a formatted string to the console.
 // INTERNAL. Do not use directly.
 void _NXTrace(NSString *format, ...) NOTNULL(1);
 
 // INTERNAL. Do not use directly.
-void _NXDie(NSString *reason, const char *filename, int line, const char *function) NOTNULL(1, 2, 3) NORETURN;
+void _NXDie(NSString *reason, const char *filename, int line, const char *function) NOTNULL(1, 2, 4) NORETURN;
 
 
 /*
