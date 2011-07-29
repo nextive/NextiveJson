@@ -26,8 +26,6 @@ build/NextiveJson.build/NextiveJson.pbxindex/cdecls.pbxbtree
 
 build/NextiveJson.build/NextiveJson.pbxindex/categories.pbxbtree
 
-README.md
-
 NextiveJson.xcodeproj/ma.perspectivev3
 
 NextiveJson.xcodeproj/ma.perspectivev3
@@ -37,3 +35,5 @@ NextiveJson.xcodeproj/ma.pbxuser
 NextiveJson.xcodeproj/ma.pbxuser
 
 NextiveJson.xcodeproj/ma.pbxuser
+
+.DS_Store
