@@ -85,15 +85,19 @@ static const char _null_chars[] = {'u', 'l', 'l', '\0'};
 {
 	ASSERT_CLASS(path, NSString);
 	
-	NSString* string = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:error];
+	NSError* myError  = nil;
+	NSString* string = [[NSString alloc] initWithContentsOfFile:path encoding:NSUTF8StringEncoding error:&myError];
 	
-	if(error && *error)
+	if(myError)
 	{
 		NXReleaseAndNil(string);
-		TRACE(@"Reading JSON file failed with %@", *error);
+		TRACE(@"Reading JSON file failed with %@", myError);
+		if (error)
+		{
+			*error = myError;
+		}
 		return nil;
-	}
-	
+	}	
 	id retval = [NXJsonParser parseString:string error:error ignoreNulls:ignoreNulls];
 	
 	NXReleaseAndNil(string);
@@ -388,7 +392,7 @@ static const char _null_chars[] = {'u', 'l', 'l', '\0'};
 			break;
 		default:
 			DIE(@"I should never be here. Fault the calling function."); 
-			array = _false_chars; // We should never be here. Assign somthing to shut up the static analyzer.
+			array = _false_chars; // We should never be here. Assign something to shut up the static analyzer.
 			break;
 	}
 	
