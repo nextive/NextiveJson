@@ -320,7 +320,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>0CEDABE013C60A910049B8A7</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>NXJsonParserTests.m</string>
+								<string>NXJsonParser.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -328,11 +328,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>0CEDABE113C60A910049B8A7</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>NXJsonParserTests.m</string>
+										<string>NXJsonParser.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>0C1F063A13E3466B00687914</string>
+										<string>0C1F064613E347E000687914</string>
 										<key>history</key>
 										<array>
 											<string>0CEDABE813C60CA20049B8A7</string>
@@ -353,8 +353,7 @@
 											<string>0C1F063013E3463D00687914</string>
 											<string>0C1F063113E3463D00687914</string>
 											<string>0C1F063213E3463D00687914</string>
-											<string>0C1F063313E3463D00687914</string>
-											<string>0C1F063813E3464C00687914</string>
+											<string>0C1F064513E347E000687914</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>

@@ -52,6 +52,11 @@ NSString* const kNextiveJsonParserErrorDomain = @"com.nextive.NXJsonParser";
 #define nextChar() (_bytes[_current + 1])
 #define skip() (_current++)
 
+static const char _true_chars[] = {'r', 'u', 'e', '\0'};
+static const char _false_chars[] = {'a', 'l', 's', 'e', '\0'};
+static const char _null_chars[] = {'u', 'l', 'l', '\0'};
+
+
 @implementation NXJsonParser
 
 -(void)dealloc
@@ -370,22 +375,20 @@ NSString* const kNextiveJsonParserErrorDomain = @"com.nextive.NXJsonParser";
 	
 	BOOL value = NO;
 	
-	static char true_chars[] = {'r', 'u', 'e', '\0'};
-	static char false_chars[] = {'a', 'l', 's', 'e', '\0'};
-	
-	char* array = NULL;
+	const char* array = NULL;
 	switch (currentChar())
 	{
 		case 't':
-			array = true_chars;
+			array = _true_chars;
 			value = YES;
 			break;
 		case 'f':
-			array = false_chars;
+			array = _false_chars;
 			value = NO;
 			break;
 		default:
-			ASSERT(!"I should never be here. Fault the calling function."); 
+			DIE(@"I should never be here. Fault the calling function."); 
+			array = _false_chars; // We should never be here. Assign somthing to shut up the static analyzer.
 			break;
 	}
 	
@@ -409,7 +412,15 @@ NSString* const kNextiveJsonParserErrorDomain = @"com.nextive.NXJsonParser";
 		}
 	}
 	
-	return [[NSNumber alloc] initWithBool:value];
+	if (value)
+	{
+		return (id)CFRetain(kCFBooleanTrue);
+	}
+	else
+	{
+		return (id)CFRetain(kCFBooleanFalse);
+	}
+
 }
 
 -(NSNull*)newNull
@@ -417,16 +428,14 @@ NSString* const kNextiveJsonParserErrorDomain = @"com.nextive.NXJsonParser";
 	ASSERT(_bytes);
 	ASSERT(hasData());
 	
-	static char expected[] = {'u', 'l', 'l', '\0'};
-	
 	skip(); // skip the 'n'
 	
 	int pos = 0;
-	while (expected[pos] != '\0')
+	while (_null_chars[pos] != '\0')
 	{
-		if (currentChar() != expected[pos])
+		if (currentChar() != _null_chars[pos])
 		{
-			[NSException raise:kUnexpectedCharException format:@"Expecting '%c' (of 'null'), found %c", expected[pos], currentChar()];
+			[NSException raise:kUnexpectedCharException format:@"Expecting '%c' (of 'null'), found %c", _null_chars[pos], currentChar()];
 		}
 		else
 		{

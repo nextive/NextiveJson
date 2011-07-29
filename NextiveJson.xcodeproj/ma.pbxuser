@@ -45,7 +45,7 @@
 		fRef = 0CEDABF413C60CE40049B8A7 /* NXJsonParser.m */;
 		name = "NXJsonParser.m: 392";
 		rLen = 0;
-		rLoc = 8307;
+		rLoc = 8482;
 		rType = 0;
 		vrLen = 438;
 		vrLoc = 8031;
@@ -89,6 +89,45 @@
 		rType = 0;
 		vrLen = 868;
 		vrLoc = 11858;
+	};
+	0C1F064513E347E000687914 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0CEDABF413C60CE40049B8A7 /* NXJsonParser.m */;
+		name = "NXJsonParser.m: 392";
+		rLen = 0;
+		rLoc = 8482;
+		rType = 0;
+		vrLen = 438;
+		vrLoc = 8031;
+	};
+	0C1F064613E347E000687914 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0CEDABF413C60CE40049B8A7 /* NXJsonParser.m */;
+		name = "NXJsonParser.m: 421";
+		rLen = 0;
+		rLoc = 8962;
+		rType = 0;
+		vrLen = 285;
+		vrLoc = 8505;
+	};
+	0C1F065513E3490100687914 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Dereference of null pointer";
+		fRef = 0CEDABF413C60CE40049B8A7 /* NXJsonParser.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 399;
+		rType = 1;
+	};
+	0C1F065613E3490100687914 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 0CEDABF413C60CE40049B8A7 /* NXJsonParser.m */;
+		name = "NXJsonParser.m: 390";
+		rLen = 0;
+		rLoc = 8297;
+		rType = 0;
+		vrLen = 478;
+		vrLoc = 8166;
 	};
 	0CEDABDB13C60A8D0049B8A7 /* NextiveJson */ = {
 		isa = PBXExecutable;
@@ -241,9 +280,9 @@
 	};
 	0CEDABF413C60CE40049B8A7 /* NXJsonParser.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {821, 14320}}";
-			sepNavSelRange = "{8307, 0}";
-			sepNavVisRange = "{8031, 438}";
+			sepNavIntBoundsRect = "{{0, 0}, {821, 14512}}";
+			sepNavSelRange = "{8297, 0}";
+			sepNavVisRange = "{8166, 478}";
 		};
 	};
 	0CEDABF513C60CE40049B8A7 /* NXJsonSerializer.h */ = {
@@ -555,7 +594,7 @@
 		fRef = 0CEDABF413C60CE40049B8A7 /* NXJsonParser.m */;
 		name = "NXJsonParser.m: 54";
 		rLen = 0;
-		rLoc = 2100;
+		rLoc = 2279;
 		rType = 0;
 		vrLen = 717;
 		vrLoc = 1747;
@@ -570,7 +609,7 @@
 	0CEDAC5713C61A290049B8A7 /* NXJsonParserTests.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {821, 7536}}";
-			sepNavSelRange = "{11917, 0}";
+			sepNavSelRange = "{12335, 0}";
 			sepNavVisRange = "{11858, 868}";
 		};
 	};
@@ -593,7 +632,7 @@
 		fRef = 0CEDABF413C60CE40049B8A7 /* NXJsonParser.m */;
 		name = "NXJsonParser.m: 56";
 		rLen = 0;
-		rLoc = 2130;
+		rLoc = 2309;
 		rType = 0;
 		vrLen = 717;
 		vrLoc = 1747;
@@ -1131,9 +1170,9 @@
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
-		activeBuildConfigurationName = Debug;
+		activeBuildConfigurationName = Release;
 		activeExecutable = 0CEDABDB13C60A8D0049B8A7 /* NextiveJson */;
-		activeSDKPreference = iphonesimulator4.2;
+		activeSDKPreference = iphoneos4.2;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* NextiveJson */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* NextiveJson */,
@@ -1202,6 +1241,10 @@
 			0C1F063513E3463D00687914 /* PBXTextBookmark */ = 0C1F063513E3463D00687914 /* PBXTextBookmark */;
 			0C1F063813E3464C00687914 /* PBXTextBookmark */ = 0C1F063813E3464C00687914 /* PBXTextBookmark */;
 			0C1F063A13E3466B00687914 /* PBXTextBookmark */ = 0C1F063A13E3466B00687914 /* PBXTextBookmark */;
+			0C1F064513E347E000687914 /* PBXTextBookmark */ = 0C1F064513E347E000687914 /* PBXTextBookmark */;
+			0C1F064613E347E000687914 /* PBXTextBookmark */ = 0C1F064613E347E000687914 /* PBXTextBookmark */;
+			0C1F065513E3490100687914 /* XCBuildMessageTextBookmark */ = 0C1F065513E3490100687914 /* XCBuildMessageTextBookmark */;
+			0C1F065613E3490100687914 /* PBXTextBookmark */ = 0C1F065613E3490100687914 /* PBXTextBookmark */;
 			0CEDABE813C60CA20049B8A7 = 0CEDABE813C60CA20049B8A7 /* PlistBookmark */;
 			0CEDABE913C60CA20049B8A7 = 0CEDABE913C60CA20049B8A7 /* PBXTextBookmark */;
 			0CEDABEA13C60CA20049B8A7 = 0CEDABEA13C60CA20049B8A7 /* PBXTextBookmark */;
