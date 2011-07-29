@@ -68,6 +68,35 @@ static const char _null_chars[] = {'u', 'l', 'l', '\0'};
 	[super dealloc];
 }
 
+-(id)init
+{
+	if ((self = [super init]))
+	{
+		_stringBufferSize = 10 * 1024;
+		_stringBuffer = (char*)malloc(_stringBufferSize * sizeof(char));
+	}
+	
+	return self;
+}
+
+
+-(id)initWithData:(NSData*)data 
+{
+	ASSERT(data);
+	ASSERT_CLASS(data, NSData);
+	
+	if ((self = [self init]))
+	{
+		_data = [data retain];
+		_bytes = (char*)[data bytes];
+		_current = 0;
+		_length = [data length];
+	}
+	
+	return self;
+}
+
+
 + (id)parseString:(NSString *)jsonString error:(NSError **)error ignoreNulls:(BOOL)ignoreNulls
 {
 	return [NXJsonParser parseData:[jsonString dataUsingEncoding:NSUTF8StringEncoding] error:error ignoreNulls:ignoreNulls];
@@ -104,28 +133,27 @@ static const char _null_chars[] = {'u', 'l', 'l', '\0'};
 	
 	return retval;
 }
--(id)initWithData:(NSData*)data 
+
+-(id)parseData:(NSData*)data error:(NSError**)error ignoreNulls:(BOOL)ignoreNulls
 {
-	ASSERT(data);
 	ASSERT_CLASS(data, NSData);
+	NXReleaseAndNil(_data);
 	
-	if ((self = [super init]))
-	{
-		_data = [data retain];
-		_bytes = (char*)[data bytes];
-		_current = 0;
-		_length = [data length];
-		
-		_stringBufferSize = 10 * 1024;
-		_stringBuffer = (char*)malloc(_stringBufferSize * sizeof(char));
-	}
+	_data = [data retain];
+	_bytes = (char*)[data bytes];
+	_current = 0;
+	_length = [data length];
 	
-	return self;
+	return [self parse:error ignoreNulls:ignoreNulls];
 }
+
 
 -(id)parse:(NSError**)error ignoreNulls:(BOOL)ignoreNulls
 {
+	ASSERT(_data);
+	
 	_ignoreNulls = ignoreNulls;
+	_current = 0;
 	
 	id retval = nil;
 	@try

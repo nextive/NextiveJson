@@ -87,14 +87,33 @@ extern NSString* const kNextiveJsonParserErrorDomain;
  @return Returns the parsed file
  */
 +(id)parseFileAtPath:(NSString*)path error:(NSError**)error ignoreNulls:(BOOL)ignoreNulls;
+
+/** 
+ Initializes a new data object
+ @return Returns the initialized data object
+ */
+-(id)init;
+
 /** 
  Initializes a new data object
  @param data The data to parse
  @return Returns the initialized data object
  */
 -(id)initWithData:(NSData*)data NOTNULL(1);
+
 /**
- Parsing of passed data occurs here
+ Parse the provided data.
+ 
+ @param jsonData The data to parse
+ @param error The parsing error
+ @param ignoreNulls If YES null values will be ignored in the parsing process
+ @return Returns the parsed data
+ 
+ */
+-(id)parseData:(NSData*)data error:(NSError**)error ignoreNulls:(BOOL)ignoreNulls NOTNULL(1);
+
+/**
+ Parsing of passed data occurs here (assuming initWithData was called)
  @param error The parsing error
  @param ignoreNulls If YES null values will be ignored in the parsing process
  @return Returns the parsed data
