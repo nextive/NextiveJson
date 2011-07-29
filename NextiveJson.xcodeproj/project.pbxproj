@@ -28,6 +28,16 @@
 		28D7ACF80DDB3853001CB0EB /* NextiveJsonViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* NextiveJsonViewController.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0C1F061F13E344C200687914 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 29B97313FDCFA39411CA2CEA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0CEDAC4813C619CD0049B8A7 /* Tests */;
+			remoteInfo = Tests;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		0CEDABF113C60CE40049B8A7 /* NXDebug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NXDebug.h; sourceTree = "<group>"; };
 		0CEDABF213C60CE40049B8A7 /* NXDebug.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NXDebug.m; sourceTree = "<group>"; };
@@ -206,6 +216,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				0C1F062013E344C200687914 /* PBXTargetDependency */,
 			);
 			name = NextiveJson;
 			productName = NextiveJson;
@@ -302,6 +313,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0C1F062013E344C200687914 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0CEDAC4813C619CD0049B8A7 /* Tests */;
+			targetProxy = 0C1F061F13E344C200687914 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		0CEDAC4B13C619CE0049B8A7 /* Debug */ = {

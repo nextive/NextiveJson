@@ -2,29 +2,7 @@
 docset-installed.txt
 readme.html
 
-build/NextiveJson.build/NextiveJson.pbxindex/symbols0.pbxsymbols
-
-build/NextiveJson.build/NextiveJson.pbxindex/subclasses.pbxbtree
-
-build/NextiveJson.build/NextiveJson.pbxindex/strings.pbxstrings/strings
-
-build/NextiveJson.build/NextiveJson.pbxindex/strings.pbxstrings/control
-
-build/NextiveJson.build/NextiveJson.pbxindex/refs.pbxbtree
-
-build/NextiveJson.build/NextiveJson.pbxindex/protocols.pbxbtree
-
-build/NextiveJson.build/NextiveJson.pbxindex/pbxindex.header
-
-build/NextiveJson.build/NextiveJson.pbxindex/imports.pbxbtree
-
-build/NextiveJson.build/NextiveJson.pbxindex/files.pbxbtree
-
-build/NextiveJson.build/NextiveJson.pbxindex/decls.pbxbtree
-
-build/NextiveJson.build/NextiveJson.pbxindex/cdecls.pbxbtree
-
-build/NextiveJson.build/NextiveJson.pbxindex/categories.pbxbtree
+build/*
 
 NextiveJson.xcodeproj/ma.perspectivev3
 
@@ -37,3 +15,6 @@ NextiveJson.xcodeproj/ma.pbxuser
 NextiveJson.xcodeproj/ma.pbxuser
 
 .DS_Store
+
+
+NextiveJson.xcodeproj/ma.pbxuser

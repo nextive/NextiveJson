@@ -54,8 +54,6 @@ extern NSString* const kNextiveJsonParserErrorDomain;
 	size_t _current;
 	size_t _length;
 	
-	NSNull* _null; // Much faster than calling [NSNull null] hundreds of times.
-	
 	// I keep a buffer for strings to avoid creating it and tearing it down every time.
 	char* _stringBuffer;
 	size_t _stringBufferSize;

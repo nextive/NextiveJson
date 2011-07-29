@@ -57,7 +57,6 @@ NSString* const kNextiveJsonParserErrorDomain = @"com.nextive.NXJsonParser";
 -(void)dealloc
 {
 	NXReleaseAndNil(_data);
-	NXReleaseAndNil(_null);
 	
 	free(_stringBuffer);
 	
@@ -107,7 +106,6 @@ NSString* const kNextiveJsonParserErrorDomain = @"com.nextive.NXJsonParser";
 		_bytes = (char*)[data bytes];
 		_current = 0;
 		_length = [data length];
-		_null = [[NSNull null] retain];
 		
 		_stringBufferSize = 10 * 1024;
 		_stringBuffer = (char*)malloc(_stringBufferSize * sizeof(char));
@@ -387,7 +385,7 @@ NSString* const kNextiveJsonParserErrorDomain = @"com.nextive.NXJsonParser";
 			value = NO;
 			break;
 		default:
-			ASSERT(!@"I should never be here. Fault the calling function."); 
+			ASSERT(!"I should never be here. Fault the calling function."); 
 			break;
 	}
 	
@@ -443,7 +441,7 @@ NSString* const kNextiveJsonParserErrorDomain = @"com.nextive.NXJsonParser";
 	}
 	else
 	{
-		return _null;
+		return (id)CFRetain(kCFNull);
 	}
 
 }

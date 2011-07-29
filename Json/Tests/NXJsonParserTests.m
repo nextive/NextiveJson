@@ -391,8 +391,8 @@
 	NSArray* array = retval;
 	STAssertEquals([array count], 2u, @"element should have 2 elements");
 	static const float epsilon = 0.0000001f;
-	STAssertTrue(fabsf([[array objectAtIndex:0] floatValue] - 5.6e+5L) < epsilon, @"element should be 5.6e+5");
-	STAssertTrue(fabsf([[array objectAtIndex:1] floatValue] - 2.3e-4L) < epsilon, @"element should be 2.3e-4");
+	STAssertTrue(fabsf([[array objectAtIndex:0] floatValue] - 5.6e+5f) < epsilon, @"element should be 5.6e+5");
+	STAssertTrue(fabsf([[array objectAtIndex:1] floatValue] - 2.3e-4f) < epsilon, @"element should be 2.3e-4");
 
 	[parser release];
 }
