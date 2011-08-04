@@ -23,6 +23,7 @@
 
 #import "NXJsonParserTests.h"
 #import "NXJsonParser.h"
+#import "NXJsonSerializer.h"
 
 @implementation NXJsonParserTests
 
@@ -341,9 +342,30 @@
 
 	[parser release];
 }
+-(void) testHello
+{
+	NSDictionary* dict = [NSDictionary dictionaryWithObjectsAndKeys:@"hello",@"en",@"你好",@"cn", nil];
+	
+	NXJsonSerializer *jsonWriter = [[NXJsonSerializer alloc] init];
+	NSString* json = [jsonWriter serialize:dict];
+	[jsonWriter release];
+	
+	NSData* data = [json dataUsingEncoding:NSUTF8StringEncoding];
+	NXJsonParser* parser = [[NXJsonParser alloc] initWithData:data];
+	NSError* error = nil;
+	NSDictionary* result = [parser parse:&error ignoreNulls:YES];
+	[parser release];
+	
+	NSString* cn = [result objectForKey:@"cn"];
+	STAssertTrue([cn isEqualToString:@"你好"], @"cn should be 你好");
+	NSString* hello = [result objectForKey:@"en"];
+	STAssertTrue([hello isEqualToString:@"hello"], @"cn should be hello");
+	UNUSED(hello);
+}
 
 -(void) testUnicode
 {
+	
 	NSData* data = [@"[\"\\u00ae\",\"\\u00bc\"]" dataUsingEncoding:NSUTF8StringEncoding];
 	NXJsonParser* parser = [[NXJsonParser alloc] initWithData:data];
 	STAssertNotNil(parser, @"Parser should not be nil");
@@ -453,6 +475,7 @@
 	NSString* valueString = value;
 	STAssertTrue([valueString isEqualToString:@"New"], @"element should be \"New\"");
 }
+
 
 
 @end

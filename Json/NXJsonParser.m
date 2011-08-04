@@ -757,7 +757,7 @@ if(newSize > _stringBufferSize) \
 							// The code sequence for, for example "®", is \u00ae. In UTF8 is encoded as 0xC2 0xAE.
 							// There's probably a better way to do this with some bit twiddling, but I'm tired and this works for now.
 							// Feel free to fix it.
-							NSString* utf16 = [[NSString alloc] initWithBytes:&uc length:sizeof(uc) encoding:NSASCIIStringEncoding];
+							NSString* utf16 = [[NSString alloc] initWithBytes:&uc length:sizeof(uc) encoding:NSUTF16LittleEndianStringEncoding];
 							char ubuffer[10] = {0}; // 10 is more than enough.
 							NSUInteger size = 0;
 							NSRange range = {0, 1};
