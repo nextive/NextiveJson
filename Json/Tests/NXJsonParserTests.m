@@ -399,6 +399,24 @@
 	[parser release];
 }
 
+-(void) testLongString
+{
+	NSMutableString* originalString = [NSMutableString string];
+	for (NSUInteger charIndex = 0; charIndex < 10250; ++charIndex)
+		[originalString appendString:@"c"];
+	NSString *quotedString = [NSString stringWithFormat:@"\"%@\"", originalString];
+	NSData* data = [quotedString dataUsingEncoding:NSUTF8StringEncoding];
+	NXJsonParser* parser = [[NXJsonParser alloc] initWithData:data];
+	STAssertNotNil(parser, @"Parser should not be nil");
+	NSError* error = nil;
+	id retVal = [parser parseData:data error:&error ignoreNulls:NO];
+	STAssertNil(error, @"Error sholud be nil");
+	STAssertTrue([retVal isKindOfClass:[NSString class]], @"element should be NSString");
+	STAssertEqualObjects(retVal, originalString, @"Long strings do not match");
+
+	[parser release];
+}
+
 -(void) testScientificNotation
 {
 	NSData* data = [@"[5.6e+5,2.3e-4]" dataUsingEncoding:NSUTF8StringEncoding];
