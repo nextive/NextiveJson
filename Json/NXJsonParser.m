@@ -642,9 +642,9 @@ static const char _null_chars[] = {'u', 'l', 'l', '\0'};
 	size_t len = 0;
 	
 #define resizeIfNeeded(newSize) \
-if(newSize > _stringBufferSize) \
+if(newSize >= _stringBufferSize) \
 { \
-	while(newSize > _stringBufferSize) \
+	while(newSize >= _stringBufferSize) \
 	{ \
 		_stringBufferSize *= 2; \
 	} \
