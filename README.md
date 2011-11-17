@@ -25,3 +25,6 @@ History
 ---------
 When we started developing this parser, the available parsers (well, the ones we were aware of) were [TouchJSON](https://github.com/TouchCode/TouchJSON) and [SBJson](https://github.com/stig/json-framework/). Both were too slow for the task at hand. We needed to parse a pretty big (3 Mb+) file, so we decided (mostly as a learning exercise) to create our own. Our first attemp was comparable to SBJson, and a few optimizations later it became much faster. It's not the fastest parser around (currently the king of speed is [JSONKit](https://github.com/johnezang/JSONKit)) and it probably never will, but it's not too bad either. We're working on some optimizations trying to make it faster but not hard to understand.
 
+Libraries
+--------
+We use the excelent [stringencoders](http://code.google.com/p/stringencod) library for wicked fast number to string conversions.
