@@ -179,8 +179,9 @@ static void modp_dtoa(double value, char* buf, int precision);
 -(void)serializeObject:(id)object
 {
 	
+    Class class = object_getClass(object);
 	
-	if(!object)
+	if(!class)
 	{
 		[self serializeNull];
 	}
@@ -198,50 +199,50 @@ static void modp_dtoa(double value, char* buf, int precision);
 	 
 	 */
 	// BEGIN FAST LOOKUPS
-	else if (object->isa == _dictClassCached)
+	else if (class == _dictClassCached)
 	{
 		[self serializeDictionary:(NSDictionary*)object];
 	}
-	else if (object->isa == _arraClassCached)
+	else if (class == _arraClassCached)
 	{
 		[self serializeArray:(NSArray*)object];
 	}
-	else if (object->isa == _striClassCached)
+	else if (class == _striClassCached)
 	{
 		[self serializeString:(NSString*)object];
 	}
-	else if (object->isa == _numbClassCached)
+	else if (class == _numbClassCached)
 	{
 		[self serializeNumber:(NSNumber*)object];
 	}
-	else if (object->isa == _nullClassCached)
+	else if (class == _nullClassCached)
 	{
 		[self serializeNull];
 	}
 	// END FAST LOOKUPS. From now on we check for subclasses too.
 	else if ([object isKindOfClass:_dictClass])
 	{
-		_dictClassCached = object->isa;
+		_dictClassCached = class;
 		[self serializeDictionary:(NSDictionary*)object];
 	}
 	else if ([object isKindOfClass:_arraClass])
 	{
-		_arraClassCached = object->isa;
+		_arraClassCached = class;
 		[self serializeArray:(NSArray*)object];
 	}
 	else if ([object isKindOfClass:_striClass])
 	{
-		_striClassCached = object->isa;
+		_striClassCached = class;
 		[self serializeString:(NSString*)object];
 	}
 	else if ([object isKindOfClass:_numbClass])
 	{
-		_numbClassCached = object->isa;
+		_numbClassCached = class;
 		[self serializeNumber:(NSNumber*)object];
 	}
 	else if ([object isKindOfClass:_nullClass])
 	{
-		_nullClassCached = object->isa;
+		_nullClassCached = class;
 		[self serializeNull];
 	}
 	else
