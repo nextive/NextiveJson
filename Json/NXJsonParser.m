@@ -561,17 +561,22 @@ static const char _null_chars[] = {'u', 'l', 'l', '\0'};
 				skip();
 				switch (currentChar())
 				{
+                    case '0': case '1':	case '2': case '3':	case '4':
+                    case '5': case '6':	case '7': case '8':	case '9':
+						positiveExponent = YES;
+						break;
 					case '+':
 						positiveExponent = YES;
+                        skip();
 						break;
 					case '-':
 						positiveExponent = NO;
+                        skip();
 						break;
 					default:
-						[NSException raise:kUnexpectedCharException  format:@"e should be followed by '+' or '-', not '%c'", currentChar()];
+						[NSException raise:kUnexpectedCharException  format:@"e should be followed by '+' or '-' or a digit, not '%c'", currentChar()];
 						break;
 				}
-				skip();
 				while (!end)
 				{
 					char e = currentChar();

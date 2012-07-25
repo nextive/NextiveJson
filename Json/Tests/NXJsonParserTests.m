@@ -419,7 +419,7 @@
 
 -(void) testScientificNotation
 {
-	NSData* data = [@"[5.6e+5,2.3e-4]" dataUsingEncoding:NSUTF8StringEncoding];
+	NSData* data = [@"[5.6e+5,2.3e-4,5.6E5]" dataUsingEncoding:NSUTF8StringEncoding];
 	NXJsonParser* parser = [[NXJsonParser alloc] initWithData:data];
 	STAssertNotNil(parser, @"Parser should not be nil");
 	STAssertTrue([parser isKindOfClass:[NXJsonParser class]], @"Parser is of the wrong class");
@@ -429,10 +429,11 @@
 	STAssertTrue([retval isKindOfClass:[NSArray class]], @"element should be NSArray");
 
 	NSArray* array = retval;
-	STAssertEquals([array count], 2u, @"element should have 2 elements");
+	STAssertEquals([array count], 3u, @"element should have 3 elements");
 	static const float epsilon = 0.0000001f;
 	STAssertTrue(fabsf([[array objectAtIndex:0] floatValue] - 5.6e+5f) < epsilon, @"element should be 5.6e+5");
 	STAssertTrue(fabsf([[array objectAtIndex:1] floatValue] - 2.3e-4f) < epsilon, @"element should be 2.3e-4");
+	STAssertTrue(fabsf([[array objectAtIndex:2] floatValue] - 5.6e+5f) < epsilon, @"element should be 5.6e+5");
 
 	[parser release];
 }
