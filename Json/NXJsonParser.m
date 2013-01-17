@@ -241,7 +241,7 @@ static const char _null_chars[] = {'u', 'l', 'l', '\0'};
 			case ' ':
 			case '\t':
 			case '\n':
-			case '\n':
+			case '\r':
 				skip();
 				break;
 			case '/':
